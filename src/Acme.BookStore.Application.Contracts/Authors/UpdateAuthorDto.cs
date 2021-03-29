@@ -12,7 +12,7 @@ namespace Acme.BookStore.Authors
         public string Name { get; set; }
 
         [Required]
-        public DateTime BirthDate { get; set; }
+        public DateTime BirthDay { get; set; }
 
         public string ShortBio { get; set; }
     }

@@ -12,6 +12,9 @@ namespace Acme.BookStore.Web
             //add new mapping
             CreateMap<Pages.Authors.CreateModalModel.CreateAuthorViewModel,
                 CreateAuthorDto>();
+            CreateMap<AuthorDto, Pages.Authors.EditModalModel.EditAuthorViewModel>();
+            CreateMap<Pages.Authors.EditModalModel.EditAuthorViewModel,
+                UpdateAuthorDto>();
         }
     }
 }

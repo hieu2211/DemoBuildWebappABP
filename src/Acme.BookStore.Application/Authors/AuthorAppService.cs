@@ -69,7 +69,7 @@ namespace Acme.BookStore.Authors
                 await _authorManager.ChangeNameAsync(author, input.Name);
             }
 
-            author.BrithDay = input.BirthDate;
+            author.BirthDay = input.BirthDay;
             author.ShortBio = input.ShortBio;
             await _authorRepository.UpdateAsync(author);
         }

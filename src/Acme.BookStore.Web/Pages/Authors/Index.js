@@ -19,16 +19,14 @@ $(function () {
                             [
                                 {
                                     text: l('Edit'),
-                                    visible:
-                                        abp.auth.isGranted('BookStore.Authors.Edit'),
+                                    visible: abp.auth.isGranted('BookStore.Authors.Edit'),
                                     action: function (data) {
                                         editModal.open({ id: data.record.id });
                                     }
                                 },
                                 {
                                     text: l('Delete'),
-                                    visible:
-                                        abp.auth.isGranted('BookStore.Authors.Delete'),
+                                    visible: abp.auth.isGranted('BookStore.Authors.Delete'),
                                     confirmMessage: function (data) {
                                         return l(
                                             'AuthorDeletionConfirmationMessage',
@@ -52,19 +50,18 @@ $(function () {
                 {
                     title: l('Name'),
                     data: "name"
+                },
+                {
+                    title: l('BirthDay'),
+                    data: "birthDay",
+                    render: function (data) {
+                        return luxon
+                            .DateTime
+                            .fromISO(data, {
+                                locale: abp.localization.currentCulture.name
+                            }).toLocaleString();
+                    }
                 }
-                //,
-                //{
-                //    title: l('BirthDay'),
-                //    data: "birthDay",
-                //    render: function (data) {
-                //        return luxon
-                //            .DateTime
-                //            .fromISO(data, {
-                //                locale: abp.localization.currentCulture.name
-                //            }).toLocaleString();
-                //    }
-                //}
             ]
         })
     );

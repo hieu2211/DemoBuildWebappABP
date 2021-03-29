@@ -10,7 +10,7 @@ namespace Acme.BookStore.Ahthors
     {
         public string Name { get; private set; }
         
-        public DateTime BrithDay { get; set; }
+        public DateTime BirthDay { get; set; }
         public string ShortBio { get; set; }
 
         private Author()
@@ -25,7 +25,7 @@ namespace Acme.BookStore.Ahthors
             [CanBeNull] string shortBio = null) : base(id)
         {
             SetName(name);
-            BrithDay = birthDay;
+            BirthDay = birthDay;
             ShortBio = shortBio;
         }
         internal Author ChangeName([NotNull] string name)

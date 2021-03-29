@@ -22,9 +22,10 @@ namespace Acme.BookStore.EntityFrameworkCore
     [ConnectionStringName("Default")]
     public class BookStoreDbContext : AbpDbContext<BookStoreDbContext>
     {
-        public DbSet<AppUser> Users { get; set; }
-        public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
+        public DbSet<Book> Books { get; set; }
+        public DbSet<AppUser> Users { get; set; }
+
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside BookStoreDbContextModelCreatingExtensions.ConfigureBookStore
